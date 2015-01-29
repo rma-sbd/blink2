@@ -80,6 +80,23 @@
       Beego is a simple & powerful Go web framework which is inspired by tornado and sinatra.
     </div>
 	<div>Beegooooooooooooooooooooooo................</div>
+	<div>Beegooooooooooooooooooooooo................</div>
+	{{.Fibonacci}}
+	<table text-align="left">
+		<tr>
+			<th>Number</th>
+			<th>Fibo</th>
+		</tr>
+		{{ range $key, $val := .Fibonacci}}
+			{{if le $key 300}}
+				<tr>
+					<td width="150">{{$key}}</td>
+					<td>{{$val}}</td>
+				</tr>
+			{{end}}
+		{{end}}
+	</table>
+	
   </header>
   <footer>
     <div class="author">
