@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
 )
 
 type MainController struct {
@@ -23,6 +24,7 @@ func fibonacci(number int) []float64 {
 
 	for i := int(2); i <= number; i++ {
 		fibo[i] = fibo[i-1] + fibo[i-2]
+		log.SetLogger("console", fibo[i])
 	}
 	return fibo
 }
